@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://lemon-xq.github.io/404.html</loc>
+    
+    <lastmod>2017-02-06T14:32:58.826Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://lemon-xq.github.io/about/index.html</loc>
     
     <lastmod>2017-02-06T08:02:09.419Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://lemon-xq.github.io/categories/index.html</loc>
     
     <lastmod>2017-02-05T12:59:29.919Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lemon-xq.github.io/404.html</loc>
-    
-    <lastmod>2017-02-04T15:50:04.313Z</lastmod>
     
   </url>
   
