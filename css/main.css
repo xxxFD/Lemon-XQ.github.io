@@ -1686,7 +1686,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9c9991;
+  background: #402b4f;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1817,7 +1817,7 @@ pre .javascript .function {
 }
 .powered-by {
   margin-right: 10px;
-  margin-left: 170px;
+  margin-left: 240px;
 }
 .powered-by::after {
   content: "|";
@@ -2846,7 +2846,7 @@ a.search-result {
   }
 }
 body {
-  background-image: url("/images/background.jpg");
+  background-image: url("http://okwl1c157.bkt.clouddn.com/background.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
