@@ -4,9 +4,9 @@
   <subtitle>Stay Hungry, Stay Foolish</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://github.com/Lemon-XQ/"/>
+  <link href="http://lemon-xq.github.io/"/>
   <updated>2017-02-06T03:36:40.794Z</updated>
-  <id>http://github.com/Lemon-XQ/</id>
+  <id>http://lemon-xq.github.io/</id>
   
   <author>
     <name>Lemon-XQ</name>
@@ -17,12 +17,12 @@
   
   <entry>
     <title>Hello~</title>
-    <link href="http://github.com/Lemon-XQ/2017/02/04/Hello/"/>
-    <id>http://github.com/Lemon-XQ/2017/02/04/Hello/</id>
+    <link href="http://lemon-xq.github.io/2017/02/04/Hello/"/>
+    <id>http://lemon-xq.github.io/2017/02/04/Hello/</id>
     <published>2017-02-04T03:26:29.000Z</published>
     <updated>2017-02-06T03:36:40.794Z</updated>
     
-    <content type="html"><![CDATA[<p>你好，欢迎来到我的个人技术博客:)<br><a id="more"></a><br>可以<a href="https://lemon-xq.github.io/about/" target="_blank" rel="external">戳这里</a>了解一下我~  </p>
+    <content type="html"><![CDATA[<p>你好，欢迎来到我的个人技术博客:)<br><a id="more"></a><br>可以<a href="https://lemon-xq.github.io/about/">戳这里</a>了解一下我~  </p>
 <p>有任何技术上的问题，欢迎一起探讨=。=<br><img src="http://okwl1c157.bkt.clouddn.com/avatar.jpg" alt=""></p>
 ]]></content>
     
@@ -32,19 +32,19 @@
     
     </summary>
     
-      <category term="随笔" scheme="http://github.com/Lemon-XQ/categories/%E9%9A%8F%E7%AC%94/"/>
+      <category term="随笔" scheme="http://lemon-xq.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
     
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="http://github.com/Lemon-XQ/2017/02/03/hello-world/"/>
-    <id>http://github.com/Lemon-XQ/2017/02/03/hello-world/</id>
+    <link href="http://lemon-xq.github.io/2017/02/03/hello-world/"/>
+    <id>http://lemon-xq.github.io/2017/02/03/hello-world/</id>
     <published>2017-02-03T15:41:00.349Z</published>
     <updated>2017-02-05T14:23:38.852Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
@@ -61,12 +61,12 @@
     
     </summary>
     
-      <category term="游戏" scheme="http://github.com/Lemon-XQ/categories/%E6%B8%B8%E6%88%8F/"/>
+      <category term="游戏" scheme="http://lemon-xq.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
     
     
-      <category term="Unity" scheme="http://github.com/Lemon-XQ/tags/Unity/"/>
+      <category term="Unity" scheme="http://lemon-xq.github.io/tags/Unity/"/>
     
-      <category term="Hexo" scheme="http://github.com/Lemon-XQ/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://lemon-xq.github.io/tags/Hexo/"/>
     
   </entry>
   
