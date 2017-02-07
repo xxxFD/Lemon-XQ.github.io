@@ -481,6 +481,11 @@ body {
   width: 100%;
   min-height: 50px;
 }
+@media (max-width: 767px) {
+  .footer {
+    height: 40px;
+  }
+}
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
@@ -1686,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #402b4f;
+  background: #738aff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1803,9 +1808,19 @@ pre .javascript .function {
 .footer img {
   border: none;
 }
+@media (max-width: 767px) {
+  .footer {
+    font-size: 13px;
+  }
+}
 .footer-inner {
   text-align: left;
   background-color: rgba(2,2,2,0.65);
+}
+@media (max-width: 767px) {
+  .footer-inner {
+    text-align: center;
+  }
 }
 .with-love {
   display: inline-block;
@@ -1817,11 +1832,16 @@ pre .javascript .function {
 }
 .powered-by {
   margin-right: 10px;
-  margin-left: 240px;
+  margin-left: 255px;
 }
 .powered-by::after {
   content: "|";
   padding-left: 10px;
+}
+@media (max-width: 767px) {
+  .powered-by {
+    margin-left: auto;
+  }
 }
 .cc-license {
   margin-top: 5px;
@@ -2591,6 +2611,7 @@ a.search-result {
 @media (max-width: 767px) {
   .footer-inner {
     width: auto;
+    height: 50px;
   }
   .footer-inner:before {
     display: none;
