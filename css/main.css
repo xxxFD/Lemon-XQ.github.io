@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #e8ac9f;
+  background: #ffc9ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2867,7 +2867,7 @@ a.search-result {
   }
 }
 body {
-  background-image: url("http://okwl1c157.bkt.clouddn.com/background.jpg");
+  background-image: url("https://okwl1c157.bkt.clouddn.com/background.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
