@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lemonxq.cn/"/>
-  <updated>2017-02-06T03:36:40.794Z</updated>
+  <updated>2017-03-04T15:49:45.659Z</updated>
   <id>http://lemonxq.cn/</id>
   
   <author>
@@ -14,6 +14,62 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cent OS下网络配置的详细步骤及一些坑</title>
+    <link href="http://lemonxq.cn/2017/03/04/Cent-OS%E4%B8%8B%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E7%9A%84%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
+    <id>http://lemonxq.cn/2017/03/04/Cent-OS下网络配置的详细步骤及一些坑/</id>
+    <published>2017-03-04T12:16:03.000Z</published>
+    <updated>2017-03-04T15:49:45.659Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　本步骤基于<strong>cent os 6.5</strong>，使用的虚拟机是<strong>Virtual Box</strong>。最终可实现主机与虚拟机互ping通，虚拟机与外网互ping通。当然，如果是cent os 7.0以上或者虚拟机是VM ware的，可能会有些差异。<br><a id="more"></a></p>
+<h2 id="虚拟机网络配置"><a href="#虚拟机网络配置" class="headerlink" title="虚拟机网络配置"></a>虚拟机网络配置</h2><ol>
+<li><p>打开主机“网络连接”，可以看到有一块虚拟网卡（VirtualBox Host-Only Network）,双击查看<strong>详细信息</strong><br><img src="http://okwl1c157.bkt.clouddn.com/virtualbox%20hostonly%20network.png" alt=""><br><img src="http://okwl1c157.bkt.clouddn.com/detail.png" alt=""><br><strong>PS: 虚拟网卡不一定只有一块，具体可在虚拟机全局设定中进行设置，这里我选择了第二块虚拟网卡作为cent os的物理网卡。</strong></p>
+</li>
+<li><p>记下详细信息中<strong>网卡的IP地址</strong>（<strong>192.168.137.1</strong>）</p>
+</li>
+<li><p>在<strong>“网络连接”</strong>中右键选择你当前上网所用的网卡（这里我用的是无线网卡），打开属性，在<strong>“共享”</strong>一栏选择刚才的那块虚拟网卡。<br><img src="http://okwl1c157.bkt.clouddn.com/share.png" alt=""><br><strong>PS：这一步非常重要！！！目的是建立虚拟网卡与主机物理网卡的联系，从而达到共享网络的效果（个人理解类似于桥接）</strong></p>
+</li>
+<li><p>打开VirtualBox的<strong>全局设定</strong>，进行如下设置：<br><img src="http://okwl1c157.bkt.clouddn.com/setting-1.png" alt=""><br><img src="http://okwl1c157.bkt.clouddn.com/setting-2.png" alt=""></p>
+</li>
+<li>打开cent os虚拟机的设置，进行如下配置：<br><img src="http://okwl1c157.bkt.clouddn.com/network.png" alt=""><br><strong>PS：这里我使用的是Host-Only，实际上使用桥接也可以，使用桥接的话直接桥接到主机物理网卡，无须设置共享</strong><h2 id="Cent-OS中网络配置"><a href="#Cent-OS中网络配置" class="headerlink" title="Cent OS中网络配置"></a>Cent OS中网络配置</h2></li>
+<li>配置<strong>ip地址</strong><br>使用命令 <strong>vi /etc/sysconfig/network-scripts/ifcfg-eth0</strong> 修改文件内容如下：<br><img src="http://okwl1c157.bkt.clouddn.com/eth0setting.png" alt=""></li>
+<li>配置<strong>网关</strong><br>使用命令 <strong>vi /etc/sysconfig/network</strong> 修改文件内容如下：<br><img src="http://okwl1c157.bkt.clouddn.com/gateway.png" alt=""></li>
+<li>配置<strong>DNS服务</strong><br>使用命令 <strong>vi /etc/resolv.conf</strong> 修改文件内容如下：<br><img src="http://okwl1c157.bkt.clouddn.com/dns.png" alt=""></li>
+<li>重启网络服务（<strong>service network restart</strong>）</li>
+</ol>
+<h2 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h2><ol>
+<li>以上步骤理论上可实现虚拟机与主机、虚拟机与外网互ping通，如果只有虚拟机ping不通主机，那么应该是主机的<strong>防火墙</strong>没有关闭，主机ping不通虚拟机也可能是这个原因。</li>
+<li>如果更换网络或者对该虚拟机进行了迁移导致执行ifconfig命令后<strong>找不到eth0网卡</strong>，则只需执行以下几步：<ul>
+<li>执行 <strong>ifconfig -a</strong> 命令查看虚拟机网卡（一般是<strong>eth1</strong>）地址(即<strong>HWaddr</strong>)</li>
+<li>执行 <strong>vi /etc/sysconfig/network-scripts/ifcfg-eth0</strong> 修改<strong>HWaddr</strong>值为虚拟机网卡地址</li>
+<li>执行 <strong>rm －rf /etc/udev/rules.d/70-persistent-net.rules</strong> 删除70-persistent-net.rules文件</li>
+<li>重启系统 <strong>reboot -h now</strong></li>
+</ul>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;　　本步骤基于&lt;strong&gt;cent os 6.5&lt;/strong&gt;，使用的虚拟机是&lt;strong&gt;Virtual Box&lt;/strong&gt;。最终可实现主机与虚拟机互ping通，虚拟机与外网互ping通。当然，如果是cent os 7.0以上或者虚拟机是VM ware的，可能会有些差异。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://lemonxq.cn/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://lemonxq.cn/tags/Linux/"/>
+    
+      <category term="Cent-OS" scheme="http://lemonxq.cn/tags/Cent-OS/"/>
+    
+      <category term="Virtual Box" scheme="http://lemonxq.cn/tags/Virtual-Box/"/>
+    
+      <category term="eth0" scheme="http://lemonxq.cn/tags/eth0/"/>
+    
+      <category term="网络" scheme="http://lemonxq.cn/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello~</title>

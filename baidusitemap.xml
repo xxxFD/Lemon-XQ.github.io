@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+  <url>
+    <loc>http://lemonxq.cn/2017/03/04/Cent-OS%E4%B8%8B%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E7%9A%84%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%9D%91/</loc>
+    <lastmod>2017-03-04T15:49:45.659Z</lastmod>
+    <data>
+        <display>
+        <title>Cent OS下网络配置的详细步骤及一些坑</title>
+        <pubTime>2017-03-04T12:16:03.000Z</pubTime>
+        
+        <tag>Linux </tag>
+         
+        <tag>Cent-OS </tag>
+         
+        <tag>Virtual Box </tag>
+         
+        <tag>eth0 </tag>
+         
+        <tag>网络 </tag>
+         
+         
+           
+             
+              <breadCrumb title="Linux" url="http://lemonxq.cn/categories/Linux/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
     
     

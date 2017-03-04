@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[Cent OS下网络配置的详细步骤及一些坑]]></title>
+      <url>%2F2017%2F03%2F04%2FCent-OS%E4%B8%8B%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E7%9A%84%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%9D%91%2F</url>
+      <content type="text"><![CDATA[写在前面 本步骤基于cent os 6.5，使用的虚拟机是Virtual Box。最终可实现主机与虚拟机互ping通，虚拟机与外网互ping通。当然，如果是cent os 7.0以上或者虚拟机是VM ware的，可能会有些差异。 虚拟机网络配置 打开主机“网络连接”，可以看到有一块虚拟网卡（VirtualBox Host-Only Network）,双击查看详细信息PS: 虚拟网卡不一定只有一块，具体可在虚拟机全局设定中进行设置，这里我选择了第二块虚拟网卡作为cent os的物理网卡。 记下详细信息中网卡的IP地址（192.168.137.1） 在“网络连接”中右键选择你当前上网所用的网卡（这里我用的是无线网卡），打开属性，在“共享”一栏选择刚才的那块虚拟网卡。PS：这一步非常重要！！！目的是建立虚拟网卡与主机物理网卡的联系，从而达到共享网络的效果（个人理解类似于桥接） 打开VirtualBox的全局设定，进行如下设置： 打开cent os虚拟机的设置，进行如下配置：PS：这里我使用的是Host-Only，实际上使用桥接也可以，使用桥接的话直接桥接到主机物理网卡，无须设置共享Cent OS中网络配置 配置ip地址使用命令 vi /etc/sysconfig/network-scripts/ifcfg-eth0 修改文件内容如下： 配置网关使用命令 vi /etc/sysconfig/network 修改文件内容如下： 配置DNS服务使用命令 vi /etc/resolv.conf 修改文件内容如下： 重启网络服务（service network restart） 一些注意事项 以上步骤理论上可实现虚拟机与主机、虚拟机与外网互ping通，如果只有虚拟机ping不通主机，那么应该是主机的防火墙没有关闭，主机ping不通虚拟机也可能是这个原因。 如果更换网络或者对该虚拟机进行了迁移导致执行ifconfig命令后找不到eth0网卡，则只需执行以下几步： 执行 ifconfig -a 命令查看虚拟机网卡（一般是eth1）地址(即HWaddr) 执行 vi /etc/sysconfig/network-scripts/ifcfg-eth0 修改HWaddr值为虚拟机网卡地址 执行 rm －rf /etc/udev/rules.d/70-persistent-net.rules 删除70-persistent-net.rules文件 重启系统 reboot -h now]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[Hello~]]></title>
       <url>%2F2017%2F02%2F04%2FHello%2F</url>
       <content type="text"><![CDATA[你好，欢迎来到我的个人技术博客:)可以戳这里了解一下我~ 有任何技术上的问题，欢迎一起探讨=。=]]></content>
