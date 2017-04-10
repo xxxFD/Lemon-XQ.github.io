@@ -1,28 +1,429 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Lemon-XQ</title>
-  <subtitle>Stay Hungry, Stay Foolish</subtitle>
-  <link href="/atom.xml" rel="self"/>
+<!doctype html>
+
+
+
   
-  <link href="http://lemonxq.cn/"/>
-  <updated>2017-04-10T10:36:40.059Z</updated>
-  <id>http://lemonxq.cn/</id>
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <author>
-    <name>Lemon-XQ</name>
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Hexo静态博客搭建+个人定制</title>
-    <link href="http://lemonxq.cn/2017/03/24/Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA+%E4%B8%AA%E4%BA%BA%E5%AE%9A%E5%88%B6/"/>
-    <id>http://lemonxq.cn/2017/03/24/Hexo静态博客搭建+个人定制/</id>
-    <published>2017-03-24T15:34:45.000Z</published>
-    <updated>2017-04-10T10:36:40.059Z</updated>
     
-    <content type="html"><![CDATA[<p><blockquote class="blockquote-center">打造高逼格的个人博客</blockquote></p>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo,博客,SEO," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Lemon-XQ" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="打造高逼格的个人博客
+写在前面　　很早以前就想写这样一篇了，因为各种原因耽搁到现在（逃）…网上关于Hexo的教程其实已经有挺多了，但是很多都是一笔带过。这篇博客除了Hexo博客的搭建过程，还有一些我加进去的个人定制模块，以及博客如何被搜索引擎（百度、谷歌）收录、如何进行SEO优化等等，以及在这过程中遇到的数不胜数的坑。虽然时隔一个月，有些搭建过程遇到的问题记不太清了orz…但是有什么问题还是可以问">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo静态博客搭建+个人定制">
+<meta property="og:url" content="http://lemonxq.cn/2017/03/24/Hexo静态博客搭建+个人定制/index.html">
+<meta property="og:site_name" content="Lemon-XQ">
+<meta property="og:description" content="打造高逼格的个人博客
+写在前面　　很早以前就想写这样一篇了，因为各种原因耽搁到现在（逃）…网上关于Hexo的教程其实已经有挺多了，但是很多都是一笔带过。这篇博客除了Hexo博客的搭建过程，还有一些我加进去的个人定制模块，以及博客如何被搜索引擎（百度、谷歌）收录、如何进行SEO优化等等，以及在这过程中遇到的数不胜数的坑。虽然时隔一个月，有些搭建过程遇到的问题记不太清了orz…但是有什么问题还是可以问">
+<meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/next.png">
+<meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/dns2.png">
+<meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/dns1.png">
+<meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/pages.png">
+<meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/dns3.png">
+<meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/dns4.png">
+<meta property="og:updated_time" content="2017-04-10T10:36:40.059Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo静态博客搭建+个人定制">
+<meta name="twitter:description" content="打造高逼格的个人博客
+写在前面　　很早以前就想写这样一篇了，因为各种原因耽搁到现在（逃）…网上关于Hexo的教程其实已经有挺多了，但是很多都是一笔带过。这篇博客除了Hexo博客的搭建过程，还有一些我加进去的个人定制模块，以及博客如何被搜索引擎（百度、谷歌）收录、如何进行SEO优化等等，以及在这过程中遇到的数不胜数的坑。虽然时隔一个月，有些搭建过程遇到的问题记不太清了orz…但是有什么问题还是可以问">
+<meta name="twitter:image" content="http://okwl1c157.bkt.clouddn.com/next.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '6383192065236272000',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lemonxq.cn/2017/03/24/Hexo静态博客搭建+个人定制/"/>
+
+
+
+
+
+  <title>
+  
+  {% block title %}{% endblock %}
+  
+  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+  <div style="display: none;">
+    <script src="https://s4.cnzz.com/z_stat.php?id=1261194950&web_id=1261194950" language="JavaScript"></script>
+  </div>
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Lemon-XQ</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">Stay Hungry, Stay Foolish</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://lemonxq.cn/2017/03/24/Hexo静态博客搭建+个人定制/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lemon-XQ">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Lemon-XQ">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Lemon-XQ" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Hexo静态博客搭建+个人定制
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-24T23:34:45+08:00">
+                2017-03-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/24/Hexo静态博客搭建+个人定制/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/24/Hexo静态博客搭建+个人定制/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/03/24/Hexo静态博客搭建+个人定制/" class="leancloud_visitors" data-flag-title="Hexo静态博客搭建+个人定制">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><blockquote class="blockquote-center">打造高逼格的个人博客</blockquote></p>
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　很早以前就想写这样一篇了，因为各种原因耽搁到现在（逃）…网上关于Hexo的教程其实已经有挺多了，但是很多都是一笔带过。这篇博客除了<strong>Hexo</strong>博客的搭建过程，还有一些我加进去的<strong>个人定制</strong>模块，以及<strong>博客如何被搜索引擎（百度、谷歌）收录、如何进行SEO优化</strong>等等，以及在这过程中遇到的数不胜数的坑。虽然时隔一个月，有些搭建过程遇到的问题记不太清了orz…但是有什么问题还是可以问我的，我尽量解答=3=最后！！！【<strong>超长文预警</strong>】！！！建议可以先看目录选择感兴趣的部分orz<br><a id="more"></a></p>
 <h2 id="Hexo简介"><a href="#Hexo简介" class="headerlink" title="Hexo简介"></a>Hexo简介</h2><p>　　相信点进来看的都是对 Hexo 已经有了一定了解的吧~简而言之，Hexo 是一个基于 Node.js 的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。其作者是来自台湾的<a href="https://github.com/hexojs/hexo" target="_blank" rel="external">tommy351</a>大神。Hexo 因其界面简洁、美观且对各类人群（不只是程序猿）友好而广受欢迎，声望不亚于大名鼎鼎的WordPress。这也是我放弃 WordPress 改投 Hexo 的原因=。=放一张 Hexo NexT 主题的照片（是不是很好看hhh）<br><img src="http://okwl1c157.bkt.clouddn.com/next.png" alt=""></p>
 <h2 id="基础配置篇"><a href="#基础配置篇" class="headerlink" title="基础配置篇"></a>基础配置篇</h2><p>【注：本文中使用的 Hexo 版本为<strong>3.22</strong>，部分配置与<strong>2.x</strong>可能有所出入】</p>
@@ -112,131 +513,686 @@
 <li><p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo官方文档（中文版）</a></p>
 </li>
 </ol>
-]]></content>
+
+      
+    </div>
+
+    <div>
+      
+        
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://okwl1c157.bkt.clouddn.com/wechat-qcode.jpg" alt="Lemon-XQ wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/博客/" rel="tag"># 博客</a>
+          
+            <a href="/tags/SEO/" rel="tag"># SEO</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/04/Cent-OS下网络配置的详细步骤及一些坑/" rel="next" title="Cent OS下网络配置的详细步骤及一些坑">
+                <i class="fa fa-chevron-left"></i> Cent OS下网络配置的详细步骤及一些坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <div class="ds-share flat" data-thread-key="2017/03/24/Hexo静态博客搭建+个人定制/"
+     data-title="Hexo静态博客搭建+个人定制"
+     data-content=""
+     data-url="http://lemonxq.cn/2017/03/24/Hexo静态博客搭建+个人定制/">
+  <div class="ds-share-inline">
+    <ul  class="ds-share-icons-16">
+
+      <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+      <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+      <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+      <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+      <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+
+    </ul>
+    <div class="ds-share-icons-more">
+    </div>
+  </div>
+</div>
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
+
+          
+  <div class="comments" id="comments">
     
-    <summary type="html">
+      <div class="ds-thread" data-thread-key="2017/03/24/Hexo静态博客搭建+个人定制/"
+           data-title="Hexo静态博客搭建+个人定制" data-url="http://lemonxq.cn/2017/03/24/Hexo静态博客搭建+个人定制/">
+      </div>
     
-      &lt;p&gt;&lt;blockquote class=&quot;blockquote-center&quot;&gt;打造高逼格的个人博客&lt;/blockquote&gt;&lt;/p&gt;
-&lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;　　很早以前就想写这样一篇了，因为各种原因耽搁到现在（逃）…网上关于Hexo的教程其实已经有挺多了，但是很多都是一笔带过。这篇博客除了&lt;strong&gt;Hexo&lt;/strong&gt;博客的搭建过程，还有一些我加进去的&lt;strong&gt;个人定制&lt;/strong&gt;模块，以及&lt;strong&gt;博客如何被搜索引擎（百度、谷歌）收录、如何进行SEO优化&lt;/strong&gt;等等，以及在这过程中遇到的数不胜数的坑。虽然时隔一个月，有些搭建过程遇到的问题记不太清了orz…但是有什么问题还是可以问我的，我尽量解答=3=最后！！！【&lt;strong&gt;超长文预警&lt;/strong&gt;】！！！建议可以先看目录选择感兴趣的部分orz&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Hexo" scheme="http://lemonxq.cn/categories/Hexo/"/>
-    
-    
-      <category term="Hexo" scheme="http://lemonxq.cn/tags/Hexo/"/>
-    
-      <category term="博客" scheme="http://lemonxq.cn/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-      <category term="SEO" scheme="http://lemonxq.cn/tags/SEO/"/>
-    
-  </entry>
+  </div>
+
+
+        </div>
+        
+          
   
-  <entry>
-    <title>Cent OS下网络配置的详细步骤及一些坑</title>
-    <link href="http://lemonxq.cn/2017/03/04/Cent-OS%E4%B8%8B%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E7%9A%84%E8%AF%A6%E7%BB%86%E6%AD%A5%E9%AA%A4%E5%8F%8A%E4%B8%80%E4%BA%9B%E5%9D%91/"/>
-    <id>http://lemonxq.cn/2017/03/04/Cent-OS下网络配置的详细步骤及一些坑/</id>
-    <published>2017-03-04T12:16:03.000Z</published>
-    <updated>2017-03-04T15:49:45.659Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　本步骤基于<strong>cent os 6.5</strong>，使用的虚拟机是<strong>Virtual Box</strong>。最终可实现主机与虚拟机互ping通，虚拟机与外网互ping通。当然，如果是cent os 7.0以上或者虚拟机是VM ware的，可能会有些差异。<br><a id="more"></a></p>
-<h2 id="虚拟机网络配置"><a href="#虚拟机网络配置" class="headerlink" title="虚拟机网络配置"></a>虚拟机网络配置</h2><ol>
-<li><p>打开主机“网络连接”，可以看到有一块虚拟网卡（VirtualBox Host-Only Network）,双击查看<strong>详细信息</strong><br><img src="http://okwl1c157.bkt.clouddn.com/virtualbox%20hostonly%20network.png" alt=""><br><img src="http://okwl1c157.bkt.clouddn.com/detail.png" alt=""><br><strong>PS: 虚拟网卡不一定只有一块，具体可在虚拟机全局设定中进行设置，这里我选择了第二块虚拟网卡作为cent os的物理网卡。</strong></p>
-</li>
-<li><p>记下详细信息中<strong>网卡的IP地址</strong>（<strong>192.168.137.1</strong>）</p>
-</li>
-<li><p>在<strong>“网络连接”</strong>中右键选择你当前上网所用的网卡（这里我用的是无线网卡），打开属性，在<strong>“共享”</strong>一栏选择刚才的那块虚拟网卡。<br><img src="http://okwl1c157.bkt.clouddn.com/share.png" alt=""><br><strong>PS：这一步非常重要！！！目的是建立虚拟网卡与主机物理网卡的联系，从而达到共享网络的效果（个人理解类似于桥接）</strong></p>
-</li>
-<li><p>打开VirtualBox的<strong>全局设定</strong>，进行如下设置：<br><img src="http://okwl1c157.bkt.clouddn.com/setting-1.png" alt=""><br><img src="http://okwl1c157.bkt.clouddn.com/setting-2.png" alt=""></p>
-</li>
-<li>打开cent os虚拟机的设置，进行如下配置：<br><img src="http://okwl1c157.bkt.clouddn.com/network.png" alt=""><br><strong>PS：这里我使用的是Host-Only，实际上使用桥接也可以，使用桥接的话直接桥接到主机物理网卡，无须设置共享</strong><h2 id="Cent-OS中网络配置"><a href="#Cent-OS中网络配置" class="headerlink" title="Cent OS中网络配置"></a>Cent OS中网络配置</h2></li>
-<li>配置<strong>ip地址</strong><br>使用命令 <strong>vi /etc/sysconfig/network-scripts/ifcfg-eth0</strong> 修改文件内容如下：<br><img src="http://okwl1c157.bkt.clouddn.com/eth0setting.png" alt=""></li>
-<li>配置<strong>网关</strong><br>使用命令 <strong>vi /etc/sysconfig/network</strong> 修改文件内容如下：<br><img src="http://okwl1c157.bkt.clouddn.com/gateway.png" alt=""></li>
-<li>配置<strong>DNS服务</strong><br>使用命令 <strong>vi /etc/resolv.conf</strong> 修改文件内容如下：<br><img src="http://okwl1c157.bkt.clouddn.com/dns.png" alt=""></li>
-<li>重启网络服务（<strong>service network restart</strong>）</li>
-</ol>
-<h2 id="一些注意事项"><a href="#一些注意事项" class="headerlink" title="一些注意事项"></a>一些注意事项</h2><ol>
-<li>以上步骤理论上可实现虚拟机与主机、虚拟机与外网互ping通，如果只有虚拟机ping不通主机，那么应该是主机的<strong>防火墙</strong>没有关闭，主机ping不通虚拟机也可能是这个原因。</li>
-<li>如果更换网络或者对该虚拟机进行了迁移导致执行ifconfig命令后<strong>找不到eth0网卡</strong>，则只需执行以下几步：<ul>
-<li>执行 <strong>ifconfig -a</strong> 命令查看虚拟机网卡（一般是<strong>eth1</strong>）地址(即<strong>HWaddr</strong>)</li>
-<li>执行 <strong>vi /etc/sysconfig/network-scripts/ifcfg-eth0</strong> 修改<strong>HWaddr</strong>值为虚拟机网卡地址</li>
-<li>执行 <strong>rm －rf /etc/udev/rules.d/70-persistent-net.rules</strong> 删除70-persistent-net.rules文件</li>
-<li>重启系统 <strong>reboot -h now</strong></li>
-</ul>
-</li>
-</ol>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;　　本步骤基于&lt;strong&gt;cent os 6.5&lt;/strong&gt;，使用的虚拟机是&lt;strong&gt;Virtual Box&lt;/strong&gt;。最终可实现主机与虚拟机互ping通，虚拟机与外网互ping通。当然，如果是cent os 7.0以上或者虚拟机是VM ware的，可能会有些差异。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://lemonxq.cn/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://lemonxq.cn/tags/Linux/"/>
-    
-      <category term="Cent-OS" scheme="http://lemonxq.cn/tags/Cent-OS/"/>
-    
-      <category term="Virtual Box" scheme="http://lemonxq.cn/tags/Virtual-Box/"/>
-    
-      <category term="eth0" scheme="http://lemonxq.cn/tags/eth0/"/>
-    
-      <category term="网络" scheme="http://lemonxq.cn/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-  </entry>
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="Lemon-XQ" />
+          <p class="site-author-name" itemprop="name">Lemon-XQ</p>
+          <p class="site-description motion-element" itemprop="description">银河街角，时光路口</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/Lemon-XQ" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              友情链接
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://www.imooc.com" title="慕课网" target="_blank">慕课网</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo简介"><span class="nav-number">2.</span> <span class="nav-text">Hexo简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础配置篇"><span class="nav-number">3.</span> <span class="nav-text">基础配置篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-安装-amp-搭建"><span class="nav-number">3.1.</span> <span class="nav-text">1.安装 & 搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-配置-SSH"><span class="nav-number">3.2.</span> <span class="nav-text">2.配置 SSH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-NexT主题下载"><span class="nav-number">3.3.</span> <span class="nav-text">3. NexT主题下载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-发布"><span class="nav-number">3.4.</span> <span class="nav-text">4. 发布</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo日常使用篇"><span class="nav-number">4.</span> <span class="nav-text">Hexo日常使用篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-生成静态页面："><span class="nav-number">4.1.</span> <span class="nav-text">1.生成静态页面：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-本地预览："><span class="nav-number">4.2.</span> <span class="nav-text">2.本地预览：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-新建文章"><span class="nav-number">4.3.</span> <span class="nav-text">3. 新建文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-新建页面"><span class="nav-number">4.4.</span> <span class="nav-text">4. 新建页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-部署并生成"><span class="nav-number">4.5.</span> <span class="nav-text">5. 部署并生成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-清除生成的文件和缓存"><span class="nav-number">4.6.</span> <span class="nav-text">6. 清除生成的文件和缓存</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#config文件配置篇"><span class="nav-number">5.</span> <span class="nav-text">_config文件配置篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-整站配置"><span class="nav-number">5.1.</span> <span class="nav-text">1.整站配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Next主题配置"><span class="nav-number">5.2.</span> <span class="nav-text">2.Next主题配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人定制模块"><span class="nav-number">6.</span> <span class="nav-text">个人定制模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更改代码块颜色及字体大小"><span class="nav-number">6.1.</span> <span class="nav-text">更改代码块颜色及字体大小</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现底栏半透明"><span class="nav-number">6.2.</span> <span class="nav-text">实现底栏半透明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加背景图片"><span class="nav-number">6.3.</span> <span class="nav-text">添加背景图片</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名绑定"><span class="nav-number">7.</span> <span class="nav-text">域名绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#购买域名"><span class="nav-number">7.1.</span> <span class="nav-text">购买域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定域名"><span class="nav-number">7.2.</span> <span class="nav-text">绑定域名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百度-amp-谷歌收录"><span class="nav-number">8.</span> <span class="nav-text">百度 & 谷歌收录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#百度收录"><span class="nav-number">8.1.</span> <span class="nav-text">百度收录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#谷歌收录"><span class="nav-number">8.2.</span> <span class="nav-text">谷歌收录</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEO优化"><span class="nav-number">9.</span> <span class="nav-text">SEO优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更改首页标题格式"><span class="nav-number">9.1.</span> <span class="nav-text">更改首页标题格式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外链生成"><span class="nav-number">9.2.</span> <span class="nav-text">外链生成</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考资料"><span class="nav-number">10.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        ﻿
+<div class="copyright" >
   
-  <entry>
-    <title>Hello~</title>
-    <link href="http://lemonxq.cn/2017/02/04/Hello/"/>
-    <id>http://lemonxq.cn/2017/02/04/Hello/</id>
-    <published>2017-02-04T03:26:29.000Z</published>
-    <updated>2017-02-06T03:36:40.794Z</updated>
-    
-    <content type="html"><![CDATA[<p>你好，欢迎来到我的个人技术博客:)<br><a id="more"></a><br>可以<a href="https://lemon-xq.github.io/about/" target="_blank" rel="external">戳这里</a>了解一下我~  </p>
-<p>有任何技术上的问题，欢迎一起探讨=。=<br><img src="http://okwl1c157.bkt.clouddn.com/avatar.jpg" alt=""></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;你好，欢迎来到我的个人技术博客:)&lt;br&gt;
-    
-    </summary>
-    
-      <category term="随笔" scheme="http://lemonxq.cn/categories/%E9%9A%8F%E7%AC%94/"/>
-    
-    
-  </entry>
+  &copy; 
   
-  <entry>
-    <title>Hello World</title>
-    <link href="http://lemonxq.cn/2017/02/03/hello-world/"/>
-    <id>http://lemonxq.cn/2017/02/03/hello-world/</id>
-    <published>2017-02-03T15:41:00.349Z</published>
-    <updated>2017-03-05T05:02:35.968Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="http://lemonxq.cn/tags/Hexo/"/>
-    
-  </entry>
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Lemon-XQ
   
-</feed>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <script src="https://s4.cnzz.com/z_stat.php?id=1261194950&web_id=1261194950" language="JavaScript"></script>
+  
+  &nbsp;&nbsp;|&nbsp;&nbsp;<span><a href="/sitemap.xml">Google网站地图</a></span>
+  &nbsp;&nbsp;|&nbsp;&nbsp;<span><a href="/baidusitemap.xml">百度网站地图</a></span>
+  
+  
+  </span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a> 
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+&nbsp;&nbsp;|&nbsp;&nbsp;本站总点击 <span id="busuanzi_value_site_pv"></span> 次
+&nbsp;&nbsp;|&nbsp;&nbsp;您是第 <span id="busuanzi_value_site_uv"></span> 位访客
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+        
+
+<div class="busuanzi-count">
+
+  <script async src="/js/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lemonxq"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '/js/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('footer')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+      
+      <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+      <script src="/js/src/hook-duoshuo.js?v=5.1.0"></script>
+    
+    
+    <script src="/lib/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+    <script src="/js/src/hook-duoshuo.js"></script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+      search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+      $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = $( "entry", xmlResponse ).map(function() {
+            return {
+              title: $( "title", this ).text(),
+              content: $("content",this).text(),
+              url: $( "url" , this).text()
+            };
+          }).get();
+          var $input = document.getElementById(search_id);
+          var $resultContent = document.getElementById(content_id);
+          $input.addEventListener('input', function(){
+            var matchcounts = 0;
+            var str='<ul class=\"search-result-list\">';
+            var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+            $resultContent.innerHTML = "";
+            if (this.value.trim().length > 1) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var content_index = [];
+                var data_title = data.title.trim().toLowerCase();
+                var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                var data_url = decodeURIComponent(data.url);
+                var index_title = -1;
+                var index_content = -1;
+                var first_occur = -1;
+                // only match artiles with not empty titles and contents
+                if(data_title != '') {
+                  keywords.forEach(function(keyword, i) {
+                    index_title = data_title.indexOf(keyword);
+                    index_content = data_content.indexOf(keyword);
+                    if( index_title >= 0 || index_content >= 0 ){
+                      isMatch = true;
+                      if (i == 0) {
+                        first_occur = index_content;
+                      }
+                    }
+
+                  });
+                }
+                // show search results
+                if (isMatch) {
+                  matchcounts += 1;
+                  str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                  var content = data.content.trim().replace(/<[^>]+>/g,"");
+                  if (first_occur >= 0) {
+                    // cut out 100 characters
+                    var start = first_occur - 20;
+                    var end = first_occur + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if(start == 0){
+                      end = 50;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    var match_content = content.substring(start, end);
+                    // highlight all keywords
+                    keywords.forEach(function(keyword){
+                      var regS = new RegExp(keyword, "gi");
+                      match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                    });
+
+                    str += "<p class=\"search-result\">" + match_content +"...</p>"
+                  }
+                  str += "</li>";
+                }
+              })};
+            str += "</ul>";
+            if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+            if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+            $resultContent.innerHTML = str;
+          });
+          proceedsearch();
+        }
+      });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+
+  
+
+  
+  <script src="/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("yUseF1bvQMjAV2WF8ebTj9jo-gzGzoHsz", "iWQEqzWeV07HMMiQNxidfuqH");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
