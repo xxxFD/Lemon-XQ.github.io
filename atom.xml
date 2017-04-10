@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lemonxq.cn/"/>
-  <updated>2017-04-10T10:36:40.059Z</updated>
+  <updated>2017-04-10T10:45:49.673Z</updated>
   <id>http://lemonxq.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://lemonxq.cn/2017/03/24/Hexo%E9%9D%99%E6%80%81%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA+%E4%B8%AA%E4%BA%BA%E5%AE%9A%E5%88%B6/"/>
     <id>http://lemonxq.cn/2017/03/24/Hexo静态博客搭建+个人定制/</id>
     <published>2017-03-24T15:34:45.000Z</published>
-    <updated>2017-04-10T10:36:40.059Z</updated>
+    <updated>2017-04-10T10:45:49.673Z</updated>
     
     <content type="html"><![CDATA[<p><blockquote class="blockquote-center">打造高逼格的个人博客</blockquote></p>
 <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　很早以前就想写这样一篇了，因为各种原因耽搁到现在（逃）…网上关于Hexo的教程其实已经有挺多了，但是很多都是一笔带过。这篇博客除了<strong>Hexo</strong>博客的搭建过程，还有一些我加进去的<strong>个人定制</strong>模块，以及<strong>博客如何被搜索引擎（百度、谷歌）收录、如何进行SEO优化</strong>等等，以及在这过程中遇到的数不胜数的坑。虽然时隔一个月，有些搭建过程遇到的问题记不太清了orz…但是有什么问题还是可以问我的，我尽量解答=3=最后！！！【<strong>超长文预警</strong>】！！！建议可以先看目录选择感兴趣的部分orz<br><a id="more"></a></p>
