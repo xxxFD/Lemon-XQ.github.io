@@ -100,7 +100,7 @@
 <meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/pages.png">
 <meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/dns3.png">
 <meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/dns4.png">
-<meta property="og:updated_time" content="2017-04-10T10:45:49.673Z">
+<meta property="og:updated_time" content="2017-04-10T11:34:55.253Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo静态博客搭建+个人定制">
 <meta name="twitter:description" content="打造高逼格的个人博客
@@ -498,7 +498,8 @@
 <li>在coding项目主页中点击<strong>pages服务</strong>，进行如下配置<br><img src="http://okwl1c157.bkt.clouddn.com/pages.png" alt=""></li>
 <li>在DNS Pod中添加两条CNAME记录，如下<br><img src="http://okwl1c157.bkt.clouddn.com/dns3.png" alt=""><br><img src="http://okwl1c157.bkt.clouddn.com/dns4.png" alt=""></li>
 <li>重新部署博客，等待一两天后应该就可以在百度里搜索到你的博客啦（虽然目前为止，百度好像也就收录了我的站点首页= =）</li>
-<li>小tips：百度<strong>主动推送</strong>比自动推送等要快的多，因此每写完一篇博客后，建议自己主动推送给百度，方法百度站长平台里有写<h3 id="谷歌收录"><a href="#谷歌收录" class="headerlink" title="谷歌收录"></a>谷歌收录</h3>让谷歌收录就容易多了，只要提交站点地图然后验证域名所有权就行了，具体的上面那篇文章也很详细地介绍了，这里不再赘述。</li>
+<li>小tips：百度<strong>主动推送</strong>比自动推送等要快的多，因此每写完一篇博客后，建议自己主动推送给百度，方法百度站长平台里有写</li>
+<li>小tips之二：在百度站长平台<strong>索引量</strong>工具定制索引规则为：<code>你的站点/*</code>　可以加快百度爬虫爬取你的博客网站下的子网页并建立索引的速度。<h3 id="谷歌收录"><a href="#谷歌收录" class="headerlink" title="谷歌收录"></a>谷歌收录</h3>让谷歌收录就容易多了，只要提交站点地图然后验证域名所有权就行了，具体的上面那篇文章也很详细地介绍了，这里不再赘述。</li>
 </ol>
 <h2 id="SEO优化"><a href="#SEO优化" class="headerlink" title="SEO优化"></a>SEO优化</h2><h3 id="更改首页标题格式"><a href="#更改首页标题格式" class="headerlink" title="更改首页标题格式"></a>更改首页标题格式</h3><p>打开\themes\next\layout\index.swig文件，找到这行代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;% block title %&#125; &#123;&#123; config.title &#125;&#125; &#123;% endblock %&#125;</div></pre></td></tr></table></figure></p>
 <p>把它改成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123;% block title %&#125;</div><div class="line">  &#123;&#123; theme.keywords &#125;&#125; - &#123;&#123; config.title &#125;&#125; - &#123;&#123; theme.description &#125;&#125;</div><div class="line">&#123;% endblock %&#125;</div></pre></td></tr></table></figure></p>
