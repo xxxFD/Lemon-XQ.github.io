@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lemonxq.cn/"/>
-  <updated>2017-08-13T12:47:07.366Z</updated>
+  <updated>2017-11-14T04:01:55.055Z</updated>
   <id>http://lemonxq.cn/</id>
   
   <author>
@@ -14,6 +14,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows下迁移指定MySQL数据库至Linux</title>
+    <link href="http://lemonxq.cn/2017/11/14/Windows%E4%B8%8B%E8%BF%81%E7%A7%BB%E6%8C%87%E5%AE%9AMySQL%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%B3Linux/"/>
+    <id>http://lemonxq.cn/2017/11/14/Windows下迁移指定MySQL数据库至Linux/</id>
+    <published>2017-11-14T03:13:50.000Z</published>
+    <updated>2017-11-14T04:01:55.055Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　最近有个项目，需要把部署在Windows下的mysql数据库迁移到linux服务器中，且只迁移该项目的数据库。记录一下步骤。</p>
+<p><strong>注：</strong>本步骤基于<strong>cent os 7</strong>，使用的远程ssh工具为<strong>XShell5</strong>,数据库管理工具为<strong>Navicat for MySQL</strong>。迁移之前请确保两台主机已安装配置好MySQL数据库。<br><a id="more"></a></p>
+<h2 id="使用sql脚本文件迁移"><a href="#使用sql脚本文件迁移" class="headerlink" title="使用sql脚本文件迁移"></a>使用sql脚本文件迁移</h2><h3 id="Windows（迁出数据库主机）"><a href="#Windows（迁出数据库主机）" class="headerlink" title="Windows（迁出数据库主机）"></a>Windows（迁出数据库主机）</h3><ol>
+<li>打开Navicat，在项目所在数据库处，<strong>右键-&gt;转储SQL文件</strong><br><img src="http://okwl1c157.bkt.clouddn.com/sql_transfer1.png" alt=""></li>
+<li>导出sql文件成功<br><img src="http://okwl1c157.bkt.clouddn.com/sql_transfer2.png" alt=""></li>
+</ol>
+<h3 id="Linux（迁入数据库主机）"><a href="#Linux（迁入数据库主机）" class="headerlink" title="Linux（迁入数据库主机）"></a>Linux（迁入数据库主机）</h3><ol>
+<li>打开XShell， <strong>ssh</strong>连接Linux主机（CentOS7）</li>
+<li>将windows下导出的sql文件上传至Linux主机中，这里以<strong>XShell</strong>提供的<strong>ZMODEM</strong>文件传输工具为例。<ul>
+<li><code>yum install lrzsz</code> 下载远程上传下载工具</li>
+<li><code>cd 指定文件夹</code></li>
+<li><code>rz</code>上传导出的sql文件（若<strong>上传失败</strong>请使用<code>rz -E</code>命令）</li>
+</ul>
+</li>
+<li>执行sql脚本文件<ul>
+<li><code>mysql -u root -p</code> 输入密码后进入mysql命令行</li>
+<li><code>create database 项目数据库名;</code></li>
+<li><code>use 项目数据库名;</code></li>
+<li><code>source 路径/XXX.sql</code></li>
+<li>执行成功，<code>show tables;</code>可以看到已经导入的表</li>
+</ul>
+</li>
+</ol>
+<h2 id="使用mysqldump命令迁移"><a href="#使用mysqldump命令迁移" class="headerlink" title="使用mysqldump命令迁移"></a>使用mysqldump命令迁移</h2><h3 id="Windows（迁出数据库主机）-1"><a href="#Windows（迁出数据库主机）-1" class="headerlink" title="Windows（迁出数据库主机）"></a>Windows（迁出数据库主机）</h3><ol>
+<li>打开cmd，执行mysqldump命令导出dump文件<ul>
+<li><code>mysqldump -u root -p test &gt; test.dump</code> </li>
+<li>回车后输入密码</li>
+</ul>
+</li>
+<li>导出dump文件成功(包括建表及插入语句等)</li>
+</ol>
+<h3 id="Linux（迁入数据库主机）-1"><a href="#Linux（迁入数据库主机）-1" class="headerlink" title="Linux（迁入数据库主机）"></a>Linux（迁入数据库主机）</h3><ol>
+<li>打开XShell， <strong>ssh</strong>连接Linux主机（CentOS7）</li>
+<li>将windows下导出的dump文件上传至Linux主机中，步骤同上</li>
+<li>从备份的dump文件恢复数据库<ul>
+<li><code>mysql test &lt; test.dump</code></li>
+</ul>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;　　最近有个项目，需要把部署在Windows下的mysql数据库迁移到linux服务器中，且只迁移该项目的数据库。记录一下步骤。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：&lt;/strong&gt;本步骤基于&lt;strong&gt;cent os 7&lt;/strong&gt;，使用的远程ssh工具为&lt;strong&gt;XShell5&lt;/strong&gt;,数据库管理工具为&lt;strong&gt;Navicat for MySQL&lt;/strong&gt;。迁移之前请确保两台主机已安装配置好MySQL数据库。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="MySQL" scheme="http://lemonxq.cn/categories/MySQL/"/>
+    
+    
+      <category term="Linux" scheme="http://lemonxq.cn/tags/Linux/"/>
+    
+      <category term="CentOS7" scheme="http://lemonxq.cn/tags/CentOS7/"/>
+    
+      <category term="MySQL" scheme="http://lemonxq.cn/tags/MySQL/"/>
+    
+  </entry>
   
   <entry>
     <title>Unity对象池技术（原理+实战）</title>
