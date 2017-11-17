@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lemonxq.cn/"/>
-  <updated>2017-11-14T04:01:55.055Z</updated>
+  <updated>2017-11-17T12:43:20.950Z</updated>
   <id>http://lemonxq.cn/</id>
   
   <author>
@@ -14,6 +14,76 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现在Java中执行python代码或py脚本（可传参数）</title>
+    <link href="http://lemonxq.cn/2017/11/17/%E5%AE%9E%E7%8E%B0%E5%9C%A8Java%E4%B8%AD%E6%89%A7%E8%A1%8Cpython%E4%BB%A3%E7%A0%81%E6%88%96py%E8%84%9A%E6%9C%AC%EF%BC%88%E5%8F%AF%E4%BC%A0%E5%8F%82%E6%95%B0%EF%BC%89/"/>
+    <id>http://lemonxq.cn/2017/11/17/实现在Java中执行python代码或py脚本（可传参数）/</id>
+    <published>2017-11-17T09:25:18.000Z</published>
+    <updated>2017-11-17T12:43:20.950Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　最近用<strong>Java</strong>写服务端程序时，遇到这样一个需求：需要把<strong>用python写的机器学习算法</strong>部署到服务器上，然后Java执行<strong>py脚本</strong>，并且取得算法执行的结果。在网上找了很久，有些跑不通，有些是基于windows的，我的服务器是<strong>linux</strong>的，遇到了不少坑= =好不容易解决了，记录一下。</p>
+<p><strong>注：Web服务器：Tomcat　服务器OS：CentOS 7　开发工具：Eclipse</strong><br><a id="more"></a></p>
+<h2 id="直接嵌入python代码-使用PythonInterpreter"><a href="#直接嵌入python代码-使用PythonInterpreter" class="headerlink" title="直接嵌入python代码(使用PythonInterpreter)"></a>直接嵌入python代码(使用PythonInterpreter)</h2><ul>
+<li><strong>适用情形：</strong>要嵌入的python代码不长</li>
+<li><strong>步骤：</strong><ul>
+<li>下载<strong>Jython</strong>，导入jython.jar到项目lib中</li>
+<li>引用org.python包</li>
+<li>测试代码如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> javax.script.*;    </div><div class="line"><span class="keyword">import</span> org.python.util.PythonInterpreter;  </div><div class="line"><span class="keyword">import</span> java.io.*;  </div><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.System.*;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span>  </span></div><div class="line">&#123;  </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span>  </span></div><div class="line"> &#123;      </div><div class="line">  PythonInterpreter interpreter = <span class="keyword">new</span> PythonInterpreter();  </div><div class="line">  interpreter.exec(<span class="string">"print "</span>TEST<span class="string">";"</span>);  </div><div class="line"> &#125;</div><div class="line">&#125; </div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="执行python脚本-使用PythonInterpreter"><a href="#执行python脚本-使用PythonInterpreter" class="headerlink" title="执行python脚本(使用PythonInterpreter)"></a>执行python脚本(使用PythonInterpreter)</h2><ul>
+<li><strong>适用情形：</strong>python代码为py文件形式</li>
+<li><strong>步骤：</strong><ul>
+<li>下载Jython，导入jython.jar到项目lib中</li>
+<li>引用org.python包</li>
+<li>测试代码如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> javax.script.*;    </div><div class="line"><span class="keyword">import</span> org.python.util.PythonInterpreter;  </div><div class="line"><span class="keyword">import</span> java.io.*;  </div><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.System.*;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span>  </span></div><div class="line">&#123;  </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span>  </span></div><div class="line"> &#123;      </div><div class="line">  PythonInterpreter interpreter = <span class="keyword">new</span> PythonInterpreter();  </div><div class="line">  InputStream filepy = <span class="keyword">new</span> FileInputStream(<span class="string">"D:\\demo.py"</span>);   </div><div class="line">  interpreter.execfile(filepy);   </div><div class="line">  filepy.close();  </div><div class="line"> &#125;  </div><div class="line">&#125;  </div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="执行python脚本-使用Runtime-getRuntime-）"><a href="#执行python脚本-使用Runtime-getRuntime-）" class="headerlink" title="执行python脚本(使用Runtime.getRuntime()）"></a>执行python脚本(使用Runtime.getRuntime()）</h2><ul>
+<li><strong>适用情形：</strong><ul>
+<li>python脚本中<strong>import了外来模块</strong>；</li>
+<li>需要<strong>传入数据</strong>给python脚本</li>
+<li><strong>PS:</strong>上面两种不知道为啥老是会报错= =所以最后我用的是这种……</li>
+</ul>
+</li>
+<li><strong>测试代码：</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义传入参数</span></div><div class="line"><span class="keyword">int</span> age;</div><div class="line"><span class="comment">// 接收python脚本的输出结果</span></div><div class="line"><span class="keyword">int</span> result;</div><div class="line"><span class="comment">// 若Python脚本在windows主机中</span></div><div class="line">String cmdStr_windows = <span class="string">"python D:\\demo.py"</span>+ <span class="string">" "</span> + age;</div><div class="line"><span class="comment">// 若Python脚本在Linux主机中</span></div><div class="line">String cmdStr_linux = <span class="string">"python /home/pythonCode/demo.py"</span>+ <span class="string">" "</span> + age);</div><div class="line"><span class="comment">// 定义缓冲区、正常结果输出流、错误信息输出流</span></div><div class="line"><span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];  </div><div class="line">ByteArrayOutputStream outStream = <span class="keyword">new</span> ByteArrayOutputStream();  </div><div class="line">ByteArrayOutputStream outerrStream = <span class="keyword">new</span> ByteArrayOutputStream();   </div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">	proc = Runtime.getRuntime().exec(cmdStr_linux);</div><div class="line">	InputStream errStream = proc.getErrorStream();</div><div class="line">	InputStream stream = proc.getInputStream();</div><div class="line">	</div><div class="line">	<span class="comment">// 流读取与写入</span></div><div class="line">	<span class="keyword">int</span> len = -<span class="number">1</span>;  </div><div class="line">	<span class="keyword">while</span> ((len = errStream.read(buffer)) != -<span class="number">1</span>) &#123;  </div><div class="line">	    outerrStream.write(buffer, <span class="number">0</span>, len);  </div><div class="line">	&#125;  </div><div class="line">	<span class="keyword">while</span> ((len = stream.read(buffer)) != -<span class="number">1</span>) &#123;  </div><div class="line">	    outStream.write(buffer, <span class="number">0</span>, len);  </div><div class="line">	&#125;  </div><div class="line">	proc.waitFor();<span class="comment">// 等待命令执行完成</span></div><div class="line">	</div><div class="line">	<span class="comment">// 打印流信息</span></div><div class="line">	System.out.println(outStream.toString());</div><div class="line">	System.out.println(outerrStream.toString());</div><div class="line">	</div><div class="line">	<span class="comment">// 将接收的输出结果转换为目标类型</span></div><div class="line">	res = Integer.parseInt(outStream.toString());</div><div class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">	e.printStackTrace();</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li><p>demo.py脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">age = sys.argv[<span class="number">1</span>]</div><div class="line">res = <span class="number">1111</span></div><div class="line"><span class="keyword">print</span> res</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>注：</strong></p>
+<ul>
+<li>若python脚本在Linux主机中，注意文件路径要为<strong>绝对路径</strong>，而且<strong>不能用~代替家目录！！！</strong>必须写成/XX/XXX的形式</li>
+<li>若要传递多个参数，需要以<strong>空格</strong>间隔</li>
+<li>接收python脚本执行结果可用<strong>java的InputStream</strong>截获控制台输出</li>
+</ul>
+</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;　　最近用&lt;strong&gt;Java&lt;/strong&gt;写服务端程序时，遇到这样一个需求：需要把&lt;strong&gt;用python写的机器学习算法&lt;/strong&gt;部署到服务器上，然后Java执行&lt;strong&gt;py脚本&lt;/strong&gt;，并且取得算法执行的结果。在网上找了很久，有些跑不通，有些是基于windows的，我的服务器是&lt;strong&gt;linux&lt;/strong&gt;的，遇到了不少坑= =好不容易解决了，记录一下。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注：Web服务器：Tomcat　服务器OS：CentOS 7　开发工具：Eclipse&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://lemonxq.cn/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://lemonxq.cn/tags/Java/"/>
+    
+      <category term="Python" scheme="http://lemonxq.cn/tags/Python/"/>
+    
+      <category term="Tomcat" scheme="http://lemonxq.cn/tags/Tomcat/"/>
+    
+      <category term="服务端编程" scheme="http://lemonxq.cn/tags/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows下迁移指定MySQL数据库至Linux</title>

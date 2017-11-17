@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Unity," />
+  <meta name="keywords" content="Java,Python,Tomcat,服务端编程," />
 
 
 
@@ -86,21 +86,19 @@
 
 
 
-<meta name="description" content="关于脚本的生命周期你都知道多少？
-写在前面　　在Unity项目中，经常会使用到Start、Update、Awake、OnEnable、LateUpdate、OnDisable、OnDestroy、OnGUI、FixedUpdate方法，然而，它们的生命周期你都清楚么？看上去好像无关紧要的东西往往会在不经意间给你挖了一个坑…曾经被坑过的我如是说：)">
+<meta name="description" content="写在前面　　最近用Java写服务端程序时，遇到这样一个需求：需要把用python写的机器学习算法部署到服务器上，然后Java执行py脚本，并且取得算法执行的结果。在网上找了很久，有些跑不通，有些是基于windows的，我的服务器是linux的，遇到了不少坑= =好不容易解决了，记录一下。
+注：Web服务器：Tomcat　服务器OS：CentOS 7　开发工具：Eclipse">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Unity中脚本的生命周期详解">
-<meta property="og:url" content="http://lemonxq.cn/2017/04/20/Unity中脚本的生命周期详解/index.html">
+<meta property="og:title" content="实现在Java中执行python代码或py脚本（可传参数）">
+<meta property="og:url" content="http://lemonxq.cn/2017/11/17/实现在Java中执行python代码或py脚本（可传参数）/index.html">
 <meta property="og:site_name" content="Lemon-XQ">
-<meta property="og:description" content="关于脚本的生命周期你都知道多少？
-写在前面　　在Unity项目中，经常会使用到Start、Update、Awake、OnEnable、LateUpdate、OnDisable、OnDestroy、OnGUI、FixedUpdate方法，然而，它们的生命周期你都清楚么？看上去好像无关紧要的东西往往会在不经意间给你挖了一个坑…曾经被坑过的我如是说：)">
-<meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/Image.png">
-<meta property="og:updated_time" content="2017-04-25T07:49:11.742Z">
+<meta property="og:description" content="写在前面　　最近用Java写服务端程序时，遇到这样一个需求：需要把用python写的机器学习算法部署到服务器上，然后Java执行py脚本，并且取得算法执行的结果。在网上找了很久，有些跑不通，有些是基于windows的，我的服务器是linux的，遇到了不少坑= =好不容易解决了，记录一下。
+注：Web服务器：Tomcat　服务器OS：CentOS 7　开发工具：Eclipse">
+<meta property="og:updated_time" content="2017-11-17T12:43:20.950Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Unity中脚本的生命周期详解">
-<meta name="twitter:description" content="关于脚本的生命周期你都知道多少？
-写在前面　　在Unity项目中，经常会使用到Start、Update、Awake、OnEnable、LateUpdate、OnDisable、OnDestroy、OnGUI、FixedUpdate方法，然而，它们的生命周期你都清楚么？看上去好像无关紧要的东西往往会在不经意间给你挖了一个坑…曾经被坑过的我如是说：)">
-<meta name="twitter:image" content="http://okwl1c157.bkt.clouddn.com/Image.png">
+<meta name="twitter:title" content="实现在Java中执行python代码或py脚本（可传参数）">
+<meta name="twitter:description" content="写在前面　　最近用Java写服务端程序时，遇到这样一个需求：需要把用python写的机器学习算法部署到服务器上，然后Java执行py脚本，并且取得算法执行的结果。在网上找了很久，有些跑不通，有些是基于windows的，我的服务器是linux的，遇到了不少坑= =好不容易解决了，记录一下。
+注：Web服务器：Tomcat　服务器OS：CentOS 7　开发工具：Eclipse">
 
 
 
@@ -128,14 +126,14 @@
 
 
 
-  <link rel="canonical" href="http://lemonxq.cn/2017/04/20/Unity中脚本的生命周期详解/"/>
+  <link rel="canonical" href="http://lemonxq.cn/2017/11/17/实现在Java中执行python代码或py脚本（可传参数）/"/>
 
 
 
 
 
   <title>
-   Unity中脚本的生命周期详解 | Lemon-XQ 
+   实现在Java中执行python代码或py脚本（可传参数） | Lemon-XQ 
   </title>
 </head>
 
@@ -298,7 +296,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://lemonxq.cn/2017/04/20/Unity中脚本的生命周期详解/">
+  <link itemprop="mainEntityOfPage" href="http://lemonxq.cn/2017/11/17/实现在Java中执行python代码或py脚本（可传参数）/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Lemon-XQ">
@@ -322,7 +320,7 @@
             
             
               
-                Unity中脚本的生命周期详解
+                实现在Java中执行python代码或py脚本（可传参数）
               
             
           </h1>
@@ -337,8 +335,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-20T15:06:22+08:00">
-                2017-04-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-17T17:25:18+08:00">
+                2017-11-17
               </time>
             
 
@@ -360,8 +358,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Unity/" itemprop="url" rel="index">
-                    <span itemprop="name">Unity</span>
+                  <a href="/categories/Java/" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
                   </a>
                 </span>
 
@@ -378,7 +376,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/04/20/Unity中脚本的生命周期详解/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/11/17/实现在Java中执行python代码或py脚本（可传参数）/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -389,7 +387,7 @@
 
           
           
-             <span id="/2017/04/20/Unity中脚本的生命周期详解/" class="leancloud_visitors" data-flag-title="Unity中脚本的生命周期详解">
+             <span id="/2017/11/17/实现在Java中执行python代码或py脚本（可传参数）/" class="leancloud_visitors" data-flag-title="实现在Java中执行python代码或py脚本（可传参数）">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -416,20 +414,47 @@
       
 
       
-        <p><blockquote class="blockquote-center">关于脚本的生命周期你都知道多少？</blockquote></p>
-<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　在Unity项目中，经常会使用到Start、Update、Awake、OnEnable、LateUpdate、OnDisable、OnDestroy、OnGUI、FixedUpdate方法，然而，它们的生命周期你都清楚么？看上去好像无关紧要的东西往往会在不经意间给你挖了一个坑…曾经被坑过的我如是说：)<br><a id="more"></a></p>
-<h2 id="Unity脚本的生命周期"><a href="#Unity脚本的生命周期" class="headerlink" title="Unity脚本的生命周期"></a>Unity脚本的生命周期</h2><p>　　先上一张图:<br><img src="http://okwl1c157.bkt.clouddn.com/Image.png" alt=""><br>　　接下来将逐个讲解…</p>
-<h3 id="Awake"><a href="#Awake" class="headerlink" title="Awake"></a>Awake</h3><p>　　Awake在MonoBehavior创建后就<strong>立刻</strong>调用，此后每当脚本被加载时调用一次Awake,即使脚本没有被激活；在<strong>脚本实例的整个生命周期</strong>中，Awake函数<strong>仅执行一次</strong>；<strong>值得注意的一点是，Awake函数的执行与否与脚本实例的状态（启用或禁用）并没有关系，而是与脚本实例所绑定的游戏对象的开关状态有关。</strong>如果游戏对象（即gameObject）的初始状态为关闭状态，那么运行程序，Awake函数不会执行；如果游戏对象的初始状态为开启状态，那么Awake函数会执行；如果重新加载场景，那么场景内Awake函数的执行情况重新遵循上述两点。</p>
-<h3 id="Start"><a href="#Start" class="headerlink" title="Start"></a>Start</h3><p>　　Start()将在MonoBehavior创建后<strong>在该帧Update()第一次执行前</strong>被调用；只会在第一次调用Update之前调用一次；Start()函数<strong>只在脚本实例被启用时</strong>才会执行；Start函数<strong>总是在Awake函数之后执行。</strong>如果游戏对象开启了，对象上绑定的脚本实例被禁用了，那么Start函数不会执行。这是Start函数的特点，只有在脚本实例被启用且是<strong>首次启用时</strong>它才会执行。<strong>如果是已经开启过的脚本实例被关闭后再次开启，那么Start函数不会再次执行。</strong></p>
-<p>　　<strong>注：一般开发中都是在Awake函数中获取游戏对象或者脚本实例的信息，然后在Start函数中进行一些获取之后的初始化设置。</strong></p>
-<h3 id="Update-amp-amp-LateUpdate-amp-amp-FixedUpdate"><a href="#Update-amp-amp-LateUpdate-amp-amp-FixedUpdate" class="headerlink" title="Update &amp;&amp; LateUpdate &amp;&amp; FixedUpdate"></a>Update &amp;&amp; LateUpdate &amp;&amp; FixedUpdate</h3><p>　　当MonoBehaviour启用时,其Update 和 LateUpdate在每一帧被调用；Update每帧调用一次（每秒60帧不会卡），一般用于处理画面逻辑;</p>
-<p>　　LateUpate一般用于刷新其他逻辑，注意LateUpdate是晚于所有Update执行的。一般类似相机跟随的代码会放到lateupdate里面去执行。举个栗子，一个宿舍4个人，每个人的起床在update中执行，出发在某个人中的lateupdate执行，这样就可以保证每个人都起床了才会出发</p>
-<p>　　而FixedUpdate会<strong>在每个固定的物理时间片</strong>被调用一次.不会受到图像刷新帧速率的影响。这是放置游戏基本物理行为代码的地方。在Update之后调用。</p>
-<h3 id="OnEnable-amp-amp-OnDisable-amp-amp-OnDestory"><a href="#OnEnable-amp-amp-OnDisable-amp-amp-OnDestory" class="headerlink" title="OnEnable &amp;&amp; OnDisable &amp;&amp; OnDestory"></a>OnEnable &amp;&amp; OnDisable &amp;&amp; OnDestory</h3><p>　　OnEnable:在每次激活脚本时调用OnEnable;<br>　　OnDisable:取消激活状态后调用<br>　　OnDestroy：被销毁时调用一次</p>
-<p>　<strong>　注：Awake、OnEnable、Start,都是游戏开始运行前就调用的方法。</strong></p>
-<p>　　GameObject的Activity为true，脚本的enable为true时，其先后顺序为：Awake、OnEnable、Start；<br>　　GameObject的Activity为true，脚本的enable为false时,只运行Awake；<br>　　GameObject的Activity为false时，以上都不调用，OnDisable()被调用；</p>
-<h3 id="OnGUI"><a href="#OnGUI" class="headerlink" title="OnGUI"></a>OnGUI</h3><p>　　这个函数会每帧调用好几次（每个事件一次），GUI显示函数只能在OnGui中调用</p>
-<h3 id="Reset"><a href="#Reset" class="headerlink" title="Reset"></a>Reset</h3><p>　　Reset是在用户点击检视面板的Reset按钮或者首次添加该组件时被调用.此函数只在编辑模式下被调用.Reset最常用于在检视面板中给定一个最常用的默认值.</p>
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　最近用<strong>Java</strong>写服务端程序时，遇到这样一个需求：需要把<strong>用python写的机器学习算法</strong>部署到服务器上，然后Java执行<strong>py脚本</strong>，并且取得算法执行的结果。在网上找了很久，有些跑不通，有些是基于windows的，我的服务器是<strong>linux</strong>的，遇到了不少坑= =好不容易解决了，记录一下。</p>
+<p><strong>注：Web服务器：Tomcat　服务器OS：CentOS 7　开发工具：Eclipse</strong><br><a id="more"></a></p>
+<h2 id="直接嵌入python代码-使用PythonInterpreter"><a href="#直接嵌入python代码-使用PythonInterpreter" class="headerlink" title="直接嵌入python代码(使用PythonInterpreter)"></a>直接嵌入python代码(使用PythonInterpreter)</h2><ul>
+<li><strong>适用情形：</strong>要嵌入的python代码不长</li>
+<li><strong>步骤：</strong><ul>
+<li>下载<strong>Jython</strong>，导入jython.jar到项目lib中</li>
+<li>引用org.python包</li>
+<li>测试代码如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> javax.script.*;    </div><div class="line"><span class="keyword">import</span> org.python.util.PythonInterpreter;  </div><div class="line"><span class="keyword">import</span> java.io.*;  </div><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.System.*;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span>  </span></div><div class="line">&#123;  </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span>  </span></div><div class="line"> &#123;      </div><div class="line">  PythonInterpreter interpreter = <span class="keyword">new</span> PythonInterpreter();  </div><div class="line">  interpreter.exec(<span class="string">"print "</span>TEST<span class="string">";"</span>);  </div><div class="line"> &#125;</div><div class="line">&#125; </div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="执行python脚本-使用PythonInterpreter"><a href="#执行python脚本-使用PythonInterpreter" class="headerlink" title="执行python脚本(使用PythonInterpreter)"></a>执行python脚本(使用PythonInterpreter)</h2><ul>
+<li><strong>适用情形：</strong>python代码为py文件形式</li>
+<li><strong>步骤：</strong><ul>
+<li>下载Jython，导入jython.jar到项目lib中</li>
+<li>引用org.python包</li>
+<li>测试代码如下：<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> javax.script.*;    </div><div class="line"><span class="keyword">import</span> org.python.util.PythonInterpreter;  </div><div class="line"><span class="keyword">import</span> java.io.*;  </div><div class="line"><span class="keyword">import</span> <span class="keyword">static</span> java.lang.System.*;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span>  </span></div><div class="line">&#123;  </div><div class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span>  </span></div><div class="line"> &#123;      </div><div class="line">  PythonInterpreter interpreter = <span class="keyword">new</span> PythonInterpreter();  </div><div class="line">  InputStream filepy = <span class="keyword">new</span> FileInputStream(<span class="string">"D:\\demo.py"</span>);   </div><div class="line">  interpreter.execfile(filepy);   </div><div class="line">  filepy.close();  </div><div class="line"> &#125;  </div><div class="line">&#125;  </div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="执行python脚本-使用Runtime-getRuntime-）"><a href="#执行python脚本-使用Runtime-getRuntime-）" class="headerlink" title="执行python脚本(使用Runtime.getRuntime()）"></a>执行python脚本(使用Runtime.getRuntime()）</h2><ul>
+<li><strong>适用情形：</strong><ul>
+<li>python脚本中<strong>import了外来模块</strong>；</li>
+<li>需要<strong>传入数据</strong>给python脚本</li>
+<li><strong>PS:</strong>上面两种不知道为啥老是会报错= =所以最后我用的是这种……</li>
+</ul>
+</li>
+<li><strong>测试代码：</strong><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 定义传入参数</span></div><div class="line"><span class="keyword">int</span> age;</div><div class="line"><span class="comment">// 接收python脚本的输出结果</span></div><div class="line"><span class="keyword">int</span> result;</div><div class="line"><span class="comment">// 若Python脚本在windows主机中</span></div><div class="line">String cmdStr_windows = <span class="string">"python D:\\demo.py"</span>+ <span class="string">" "</span> + age;</div><div class="line"><span class="comment">// 若Python脚本在Linux主机中</span></div><div class="line">String cmdStr_linux = <span class="string">"python /home/pythonCode/demo.py"</span>+ <span class="string">" "</span> + age);</div><div class="line"><span class="comment">// 定义缓冲区、正常结果输出流、错误信息输出流</span></div><div class="line"><span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];  </div><div class="line">ByteArrayOutputStream outStream = <span class="keyword">new</span> ByteArrayOutputStream();  </div><div class="line">ByteArrayOutputStream outerrStream = <span class="keyword">new</span> ByteArrayOutputStream();   </div><div class="line"></div><div class="line"><span class="keyword">try</span> &#123;</div><div class="line">	proc = Runtime.getRuntime().exec(cmdStr_linux);</div><div class="line">	InputStream errStream = proc.getErrorStream();</div><div class="line">	InputStream stream = proc.getInputStream();</div><div class="line">	</div><div class="line">	<span class="comment">// 流读取与写入</span></div><div class="line">	<span class="keyword">int</span> len = -<span class="number">1</span>;  </div><div class="line">	<span class="keyword">while</span> ((len = errStream.read(buffer)) != -<span class="number">1</span>) &#123;  </div><div class="line">	    outerrStream.write(buffer, <span class="number">0</span>, len);  </div><div class="line">	&#125;  </div><div class="line">	<span class="keyword">while</span> ((len = stream.read(buffer)) != -<span class="number">1</span>) &#123;  </div><div class="line">	    outStream.write(buffer, <span class="number">0</span>, len);  </div><div class="line">	&#125;  </div><div class="line">	proc.waitFor();<span class="comment">// 等待命令执行完成</span></div><div class="line">	</div><div class="line">	<span class="comment">// 打印流信息</span></div><div class="line">	System.out.println(outStream.toString());</div><div class="line">	System.out.println(outerrStream.toString());</div><div class="line">	</div><div class="line">	<span class="comment">// 将接收的输出结果转换为目标类型</span></div><div class="line">	res = Integer.parseInt(outStream.toString());</div><div class="line">&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">	e.printStackTrace();</div><div class="line">&#125;</div></pre></td></tr></table></figure></li>
+<li><p>demo.py脚本如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> sys</div><div class="line">age = sys.argv[<span class="number">1</span>]</div><div class="line">res = <span class="number">1111</span></div><div class="line"><span class="keyword">print</span> res</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>注：</strong></p>
+<ul>
+<li>若python脚本在Linux主机中，注意文件路径要为<strong>绝对路径</strong>，而且<strong>不能用~代替家目录！！！</strong>必须写成/XX/XXX的形式</li>
+<li>若要传递多个参数，需要以<strong>空格</strong>间隔</li>
+<li>接收python脚本执行结果可用<strong>java的InputStream</strong>截获控制台输出</li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -458,7 +483,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Unity/" rel="tag"># Unity</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/Tomcat/" rel="tag"># Tomcat</a>
+          
+            <a href="/tags/服务端编程/" rel="tag"># 服务端编程</a>
           
         </div>
       
@@ -467,8 +498,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/24/Hexo静态博客搭建+个人定制/" rel="next" title="Hexo静态博客搭建+个人定制">
-                <i class="fa fa-chevron-left"></i> Hexo静态博客搭建+个人定制
+              <a href="/2017/11/14/Windows下迁移指定MySQL数据库至Linux/" rel="next" title="Windows下迁移指定MySQL数据库至Linux">
+                <i class="fa fa-chevron-left"></i> Windows下迁移指定MySQL数据库至Linux
               </a>
             
           </div>
@@ -476,10 +507,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/01/ulua热更新小试/" rel="prev" title="ulua热更新小试">
-                ulua热更新小试 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -636,7 +663,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity脚本的生命周期"><span class="nav-number">2.</span> <span class="nav-text">Unity脚本的生命周期</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Awake"><span class="nav-number">2.1.</span> <span class="nav-text">Awake</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start"><span class="nav-number">2.2.</span> <span class="nav-text">Start</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Update-amp-amp-LateUpdate-amp-amp-FixedUpdate"><span class="nav-number">2.3.</span> <span class="nav-text">Update && LateUpdate && FixedUpdate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OnEnable-amp-amp-OnDisable-amp-amp-OnDestory"><span class="nav-number">2.4.</span> <span class="nav-text">OnEnable && OnDisable && OnDestory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OnGUI"><span class="nav-number">2.5.</span> <span class="nav-text">OnGUI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reset"><span class="nav-number">2.6.</span> <span class="nav-text">Reset</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直接嵌入python代码-使用PythonInterpreter"><span class="nav-number">2.</span> <span class="nav-text">直接嵌入python代码(使用PythonInterpreter)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行python脚本-使用PythonInterpreter"><span class="nav-number">3.</span> <span class="nav-text">执行python脚本(使用PythonInterpreter)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#执行python脚本-使用Runtime-getRuntime-）"><span class="nav-number">4.</span> <span class="nav-text">执行python脚本(使用Runtime.getRuntime()）</span></a></li></ol></div>
             
 
           </div>
