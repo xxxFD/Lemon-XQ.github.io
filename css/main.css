@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d6ab4e;
+  background: #ff7093;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1815,7 +1815,7 @@ pre .javascript .function {
 }
 .footer-inner {
   text-align: left;
-  background-color: rgba(2,2,2,0.65);
+  background-color: rgba(255,255,255,0.65);
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -2613,7 +2613,6 @@ a.search-result {
     width: auto;
   }
   .footer-inner:before {
-    height: 50px;
     display: none;
   }
 }
