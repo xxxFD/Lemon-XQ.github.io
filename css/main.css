@@ -983,14 +983,14 @@ pre .javascript .function {
   bottom: 40px;
 }
 .header {
-  background: #fff;
+  background: #222;
 }
 .header-inner {
   position: relative;
 }
 .headband {
   height: 3px;
-  background: #222;
+  background: #fff68f;
 }
 .site-meta {
   margin: 0;
@@ -1005,8 +1005,8 @@ pre .javascript .function {
   position: relative;
   display: inline-block;
   padding: 0 40px;
-  color: #fff;
-  background: #222;
+  color: #222;
+  background: #999;
   border-bottom: none;
 }
 .brand:hover {
@@ -1029,7 +1029,7 @@ pre .javascript .function {
 .site-subtitle {
   margin-top: 10px;
   font-size: 13px;
-  color: #ddd;
+  color: #bdb76b;
 }
 .use-motion .brand {
   opacity: 0;
@@ -1691,7 +1691,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a2faff;
+  background: #d6ab4e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1717,7 +1717,7 @@ pre .javascript .function {
   cursor: pointer;
   border-bottom: 1px solid transparent;
   font-size: 14px;
-  color: #555;
+  color: #222;
 }
 .sidebar-nav li:hover {
   color: #fc6423;
@@ -2611,9 +2611,9 @@ a.search-result {
 @media (max-width: 767px) {
   .footer-inner {
     width: auto;
-    height: 50px;
   }
   .footer-inner:before {
+    height: 50px;
     display: none;
   }
 }
@@ -2632,7 +2632,7 @@ a.search-result {
 .site-meta {
   padding: 20px 0;
   color: #fff;
-  background: #222;
+  background: #fff68f;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .site-meta {
@@ -2870,6 +2870,5 @@ body {
   background-image: url("/images/background.png");
   background-attachment: fixed;
   background-repeat: repeat;
-  background-clip: content-box;
   background-size: contain;
 }
