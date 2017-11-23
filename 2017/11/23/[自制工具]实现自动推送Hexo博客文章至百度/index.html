@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Lemon,xq,unity,Hexo" />
+  <meta name="keywords" content="Hexo,SEO,Python," />
 
 
 
@@ -86,15 +86,18 @@
 
 
 
-<meta name="description" content="银河街角，时光路口">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lemon-XQ">
-<meta property="og:url" content="http://lemonxq.cn/tags/Virtual-Box/index.html">
+<meta name="description" content="写在前面　　我们在博客发布文章时，总是希望百度能尽快收录我们的文章，但是如果傻傻等百度爬虫爬到我们这种小站点的文章……不知道要等到何年何月= =基于此，百度站长平台提供了主动推送文章至百度的接口。但是这个接口要求我们先把所有文章的URL一行一个写入urls.txt中。然而还是太麻烦了，每次写完文章还得再自己手动更新urls.txt。所以，我用python做了一个小工具，可以一键/一条命令自动推送所">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[自制工具]实现自动推送Hexo博客文章至百度">
+<meta property="og:url" content="http://lemonxq.cn/2017/11/23/[自制工具]实现自动推送Hexo博客文章至百度/index.html">
 <meta property="og:site_name" content="Lemon-XQ">
-<meta property="og:description" content="银河街角，时光路口">
+<meta property="og:description" content="写在前面　　我们在博客发布文章时，总是希望百度能尽快收录我们的文章，但是如果傻傻等百度爬虫爬到我们这种小站点的文章……不知道要等到何年何月= =基于此，百度站长平台提供了主动推送文章至百度的接口。但是这个接口要求我们先把所有文章的URL一行一个写入urls.txt中。然而还是太麻烦了，每次写完文章还得再自己手动更新urls.txt。所以，我用python做了一个小工具，可以一键/一条命令自动推送所">
+<meta property="og:image" content="http://okwl1c157.bkt.clouddn.com/baidupush_linux.png">
+<meta property="og:updated_time" content="2017-11-23T07:54:27.717Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lemon-XQ">
-<meta name="twitter:description" content="银河街角，时光路口">
+<meta name="twitter:title" content="[自制工具]实现自动推送Hexo博客文章至百度">
+<meta name="twitter:description" content="写在前面　　我们在博客发布文章时，总是希望百度能尽快收录我们的文章，但是如果傻傻等百度爬虫爬到我们这种小站点的文章……不知道要等到何年何月= =基于此，百度站长平台提供了主动推送文章至百度的接口。但是这个接口要求我们先把所有文章的URL一行一个写入urls.txt中。然而还是太麻烦了，每次写完文章还得再自己手动更新urls.txt。所以，我用python做了一个小工具，可以一键/一条命令自动推送所">
+<meta name="twitter:image" content="http://okwl1c157.bkt.clouddn.com/baidupush_linux.png">
 
 
 
@@ -122,14 +125,14 @@
 
 
 
-  <link rel="canonical" href="http://lemonxq.cn/tags/Virtual-Box/"/>
+  <link rel="canonical" href="http://lemonxq.cn/2017/11/23/[自制工具]实现自动推送Hexo博客文章至百度/"/>
 
 
 
 
 
   <title>
-   标签: Virtual Box | Lemon-XQ 
+   [自制工具]实现自动推送Hexo博客文章至百度 | Lemon-XQ 
   </title>
 </head>
 
@@ -157,7 +160,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -282,46 +285,225 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        Virtual Box
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://lemonxq.cn/2017/11/23/[自制工具]实现自动推送Hexo博客文章至百度/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Lemon-XQ">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Lemon-XQ">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Lemon-XQ" src="">
+    </span>
+  </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                [自制工具]实现自动推送Hexo博客文章至百度
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-23T12:50:06+08:00">
+                2017-11-23
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2017-11-23T15:54:27+08:00">
+                2017-11-23
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+             <span id="/2017/11/23/[自制工具]实现自动推送Hexo博客文章至百度/" class="leancloud_visitors" data-flag-title="[自制工具]实现自动推送Hexo博客文章至百度">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　我们在博客发布文章时，总是希望百度能尽快收录我们的文章，但是如果傻傻等百度爬虫爬到我们这种小站点的文章……不知道要等到何年何月= =基于此，百度站长平台提供了<strong>主动推送文章至百度的接口</strong>。但是这个接口要求我们先把所有文章的URL一行一个写入urls.txt中。然而还是太麻烦了，每次写完文章还得再自己<strong>手动更新urls.txt</strong>。所以，我用python做了一个小工具，可以一键/一条命令<strong>自动推送所有文章至百度</strong>~适合我这种懒人使用2333<br><a id="more"></a></p>
+<h2 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>　　原理其实很简单粗暴——就是写个爬虫爬取你博客里的所有文章URL，然后逐行写入urls.txt，再使用百度站长平台提供的接口完成推送。恩，听上去就是这么简单……然而渣渣如我在制作过程中还是遇到了不少问题，略去不表= =</p>
+<h3 id="使用前提"><a href="#使用前提" class="headerlink" title="使用前提"></a>使用前提</h3><ul>
+<li>确保电脑中已安装<strong>python</strong>;</li>
+<li>确保已安装<strong>pyyaml</strong>模块，安装方法：<code>pip install pyyaml</code></li>
+<li>Ubuntu用户请确保已安装<strong>curl</strong>命令，安装方法：<code>sudo apt install curl</code></li>
+<li>确保你的博客基于Hexo搭建且主题为<strong>Next | Jacman | Yelee | Apollo</strong>【暂时只测试了这几个主题，后续有需要的话再增加】;</li>
+<li>有<a href="http://ziyuan.baidu.com/linksubmit/index" target="_blank" rel="external">百度站长平台</a>账号且已绑定你的博客站点，方法平台里写的很清楚了;</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><ul>
+<li>直接在<a href="https://github.com/Lemon-XQ/Hexo-BaiduPushTool" target="_blank" rel="external">我的项目主页</a> <strong>download zip</strong> 或者<strong> git bash</strong>下执行<code>git clone https://github.com/Lemon-XQ/Hexo-BaiduPushTool.git</code></li>
+<li>打开<strong>_urlconfig.yml</strong>，填入你的<strong>博客地址、使用主题、百度主动推送接口</strong>，保存</li>
+<li>双击<strong>baidupush.bat</strong>文件，等待推送完成</li>
+</ul>
+<h4 id="Linux："><a href="#Linux：" class="headerlink" title="Linux："></a>Linux：</h4><ul>
+<li><code>git clone https://github.com/Lemon-XQ/Hexo-BaiduPushTool.git</code></li>
+<li><code>cd Hexo-BaiduPushTool</code></li>
+<li><code>vi _urlconfig.yml</code> 填写相应信息后保存退出</li>
+<li><code>python BaiduPush.py</code> 等待推送完成</li>
+</ul>
+<h4 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h4><p><img src="http://okwl1c157.bkt.clouddn.com/baidupush_linux.png" alt=""></p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>填写配置文件时，请注意yaml语法！即<strong>URL:</strong>后需加一个空格！否则会报错</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>　　源码见<a href="https://github.com/Lemon-XQ/Hexo-BaiduPushTool" target="_blank" rel="external">github</a>，如果有bug或者是建议麻烦跟我说一下啦~如果觉得还行的话给个star就更好啦（比心）~<strong>最后,github求一波互粉呀（逃</strong></p>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/03/04/Cent-OS下网络配置的详细步骤及一些坑/" itemprop="url">
-              
-                <span itemprop="name">Cent OS下网络配置的详细步骤及一些坑</span>
-              
-            </a>
+<div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://okwl1c157.bkt.clouddn.com/wechat-qcode.jpg" alt="Lemon-XQ wechat" style="width: 200px; max-width: 100%;"/>
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+</div>
+
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-03-04T20:16:03+08:00"
-              content="2017-03-04" >
-          03-04
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+            <a href="/tags/SEO/" rel="tag"># SEO</a>
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/20/Hexo之静态+动态背景设置/" rel="next" title="Hexo之静态+动态背景设置">
+                <i class="fa fa-chevron-left"></i> Hexo之静态+动态背景设置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
           
           </div>
@@ -329,6 +511,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zMTg5Ni84NDYw"></div>
+    
+  </div>
+
 
         </div>
         
@@ -348,8 +536,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -446,6 +643,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#写在前面"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具介绍"><span class="nav-number">2.</span> <span class="nav-text">工具介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#原理"><span class="nav-number">2.1.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用前提"><span class="nav-number">2.2.</span> <span class="nav-text">使用前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤"><span class="nav-number">2.3.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Windows："><span class="nav-number">2.3.1.</span> <span class="nav-text">Windows：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux："><span class="nav-number">2.3.2.</span> <span class="nav-text">Linux：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果预览"><span class="nav-number">2.3.3.</span> <span class="nav-text">效果预览</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意"><span class="nav-number">2.3.4.</span> <span class="nav-text">注意</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
     </div>
@@ -585,6 +798,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
 
   
 

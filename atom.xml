@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lemonxq.cn/"/>
-  <updated>2017-11-19T17:58:58.153Z</updated>
+  <updated>2017-11-23T07:54:27.717Z</updated>
   <id>http://lemonxq.cn/</id>
   
   <author>
@@ -14,6 +14,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[自制工具]实现自动推送Hexo博客文章至百度</title>
+    <link href="http://lemonxq.cn/2017/11/23/%5B%E8%87%AA%E5%88%B6%E5%B7%A5%E5%85%B7%5D%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E6%8E%A8%E9%80%81Hexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E8%87%B3%E7%99%BE%E5%BA%A6/"/>
+    <id>http://lemonxq.cn/2017/11/23/[自制工具]实现自动推送Hexo博客文章至百度/</id>
+    <published>2017-11-23T04:50:06.000Z</published>
+    <updated>2017-11-23T07:54:27.717Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><p>　　我们在博客发布文章时，总是希望百度能尽快收录我们的文章，但是如果傻傻等百度爬虫爬到我们这种小站点的文章……不知道要等到何年何月= =基于此，百度站长平台提供了<strong>主动推送文章至百度的接口</strong>。但是这个接口要求我们先把所有文章的URL一行一个写入urls.txt中。然而还是太麻烦了，每次写完文章还得再自己<strong>手动更新urls.txt</strong>。所以，我用python做了一个小工具，可以一键/一条命令<strong>自动推送所有文章至百度</strong>~适合我这种懒人使用2333<br><a id="more"></a></p>
+<h2 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h2><h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>　　原理其实很简单粗暴——就是写个爬虫爬取你博客里的所有文章URL，然后逐行写入urls.txt，再使用百度站长平台提供的接口完成推送。恩，听上去就是这么简单……然而渣渣如我在制作过程中还是遇到了不少问题，略去不表= =</p>
+<h3 id="使用前提"><a href="#使用前提" class="headerlink" title="使用前提"></a>使用前提</h3><ul>
+<li>确保电脑中已安装<strong>python</strong>;</li>
+<li>确保已安装<strong>pyyaml</strong>模块，安装方法：<code>pip install pyyaml</code></li>
+<li>Ubuntu用户请确保已安装<strong>curl</strong>命令，安装方法：<code>sudo apt install curl</code></li>
+<li>确保你的博客基于Hexo搭建且主题为<strong>Next | Jacman | Yelee | Apollo</strong>【暂时只测试了这几个主题，后续有需要的话再增加】;</li>
+<li>有<a href="http://ziyuan.baidu.com/linksubmit/index" target="_blank" rel="external">百度站长平台</a>账号且已绑定你的博客站点，方法平台里写的很清楚了;</li>
+</ul>
+<h3 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h3><h4 id="Windows："><a href="#Windows：" class="headerlink" title="Windows："></a>Windows：</h4><ul>
+<li>直接在<a href="https://github.com/Lemon-XQ/Hexo-BaiduPushTool" target="_blank" rel="external">我的项目主页</a> <strong>download zip</strong> 或者<strong> git bash</strong>下执行<code>git clone https://github.com/Lemon-XQ/Hexo-BaiduPushTool.git</code></li>
+<li>打开<strong>_urlconfig.yml</strong>，填入你的<strong>博客地址、使用主题、百度主动推送接口</strong>，保存</li>
+<li>双击<strong>baidupush.bat</strong>文件，等待推送完成</li>
+</ul>
+<h4 id="Linux："><a href="#Linux：" class="headerlink" title="Linux："></a>Linux：</h4><ul>
+<li><code>git clone https://github.com/Lemon-XQ/Hexo-BaiduPushTool.git</code></li>
+<li><code>cd Hexo-BaiduPushTool</code></li>
+<li><code>vi _urlconfig.yml</code> 填写相应信息后保存退出</li>
+<li><code>python BaiduPush.py</code> 等待推送完成</li>
+</ul>
+<h4 id="效果预览"><a href="#效果预览" class="headerlink" title="效果预览"></a>效果预览</h4><p><img src="http://okwl1c157.bkt.clouddn.com/baidupush_linux.png" alt=""></p>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><p>填写配置文件时，请注意yaml语法！即<strong>URL:</strong>后需加一个空格！否则会报错</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>　　源码见<a href="https://github.com/Lemon-XQ/Hexo-BaiduPushTool" target="_blank" rel="external">github</a>，如果有bug或者是建议麻烦跟我说一下啦~如果觉得还行的话给个star就更好啦（比心）~<strong>最后,github求一波互粉呀（逃</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;写在前面&quot;&gt;&lt;a href=&quot;#写在前面&quot; class=&quot;headerlink&quot; title=&quot;写在前面&quot;&gt;&lt;/a&gt;写在前面&lt;/h2&gt;&lt;p&gt;　　我们在博客发布文章时，总是希望百度能尽快收录我们的文章，但是如果傻傻等百度爬虫爬到我们这种小站点的文章……不知道要等到何年何月= =基于此，百度站长平台提供了&lt;strong&gt;主动推送文章至百度的接口&lt;/strong&gt;。但是这个接口要求我们先把所有文章的URL一行一个写入urls.txt中。然而还是太麻烦了，每次写完文章还得再自己&lt;strong&gt;手动更新urls.txt&lt;/strong&gt;。所以，我用python做了一个小工具，可以一键/一条命令&lt;strong&gt;自动推送所有文章至百度&lt;/strong&gt;~适合我这种懒人使用2333&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Hexo" scheme="http://lemonxq.cn/categories/Hexo/"/>
+    
+    
+      <category term="Hexo" scheme="http://lemonxq.cn/tags/Hexo/"/>
+    
+      <category term="SEO" scheme="http://lemonxq.cn/tags/SEO/"/>
+    
+      <category term="Python" scheme="http://lemonxq.cn/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo之静态+动态背景设置</title>
@@ -207,9 +256,9 @@
       <category term="Java" scheme="http://lemonxq.cn/categories/Java/"/>
     
     
-      <category term="Java" scheme="http://lemonxq.cn/tags/Java/"/>
-    
       <category term="Python" scheme="http://lemonxq.cn/tags/Python/"/>
+    
+      <category term="Java" scheme="http://lemonxq.cn/tags/Java/"/>
     
       <category term="Tomcat" scheme="http://lemonxq.cn/tags/Tomcat/"/>
     
